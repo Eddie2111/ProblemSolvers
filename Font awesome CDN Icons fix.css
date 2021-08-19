@@ -1,0 +1,9 @@
+.icons{
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  //this link will allow installation of other icons fron font awesome 4.7.0
+}
+.importing icons{
+  <i class="fa fa-phone" aria-hidden="true"></i>
+  
+  //using them inside the index.js or index.html will do the trick.
+}
