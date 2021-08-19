@@ -1,2 +1,2 @@
 # ProblemSolvers
-These files can solve problems of npm of yarn builds.
+These files can solve problems of npm or yarn builds.
