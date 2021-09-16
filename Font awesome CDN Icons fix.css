@@ -9,3 +9,10 @@
   <link → https://fontawesome.com/v4.7/icons/ />
   // this link will allow you to search for the links of the icon//
 }
+
+.for .py to .exe
+{
+  python -m PyInstaller -w --onefile test.py
+  
+  //please follow this sequence or else the distribution will not be created
+}
