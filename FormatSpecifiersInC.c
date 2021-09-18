@@ -2,7 +2,7 @@
 #include<conio.h>
 int main()
 {
-  
+ 
   //...format specifiers//
   %c  //	Character
   %d  //  Signed integer
