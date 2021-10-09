@@ -1,0 +1,86 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\begin{document}
+\title{Assignment 2}
+\author{\\A S M TAREQ MAHMOOD\\ID:20101073\\SET-14\\}
+\date{March 2021}
+\maketitle
+\pagebreak
+
+
+\section{Task-1}
+Given that,
+\[ \int_{1}^{exp(\pi/8)} \frac{sin^3(8ln(x))cos^7}{x} \,dx \]
+let,
+$4ln(x)=z\\$
+$4 \frac{1}{x}= \frac{dz}{dx}\\$
+$ dx = \frac{dz}{4}x$
+\\if,
+$x =1 ; z=0$
+\\if,
+$ x = e^{\frac{\pi}{8}}\\$
+So,
+$\\z =4 \frac{\pi}{8}$
+$\\z = \frac{\pi}{2}$
+\[=>\int_{1}^{exp{\frac{\pi}{8}}} \frac{sin^3 (8ln(x)) cos^7(4ln(x))}{x} dx \]
+\[=>\int_{0}^{\frac{\pi}{2}} \frac{sin^3(2z) cos^7(z)}{x} \frac{dz}{4} x \]
+\[=> \frac{1}{4}  \int_{0}^{\frac{\pi}{0}} (2sinzcosz)^3 cos^7(z) dz\]
+\[=> \frac{1}{4} 8 \int_{0}^{\frac{\pi}{2}} sin^3(z)cos^{10}(z) dz\]
+\[=> 2 \int_{0}^{\frac{\pi}{2}} sin^3(z)cos^{10}(z) dz\]
+Now,
+$2m-1=3\\$
+$m=2$
+And,
+$\\2n-1=10$	
+$\\n=\frac{11}{2}$
+\\We Know,
+\[\beta (x,y) = \int_{0}^{\frac{\pi}{2}} 2sin^{2x-1}(t)cos^{2y-1}(t) dt\]
+\[\beta (2,\frac{11}{2}) = \int_{0}^{\frac{\pi}{2}} 2sin^{3}(t)cos^{10}(t) dt\]
+\[=> \frac{\gamma (2) \gamma(\frac{11}{2})}{\gamma (2+ \frac{11}{2})}          \]
+\[=> \frac{\gamma (2) \gamma(\frac{11}{2})}{\gamma (\frac{15}{11})}          \]
+\[=> \frac{\sqrt{\pi} (\frac{945 \sqrt{\pi}}{32})} {(\frac{135135 \sqrt{\pi}}{128})} \]
+\[=> \frac{4 \sqrt{\pi}}{143}\]
+\newpage
+
+\section{Task-2}
+Given that,
+\[=>\int{\frac{cos^3(x)}{sin(x)}dx} \]
+\[=>\int \frac{cos^3 (x)-3cos(x)sin^2x}{sin(x)}dx\]
+\[=>-\int \frac{3cos(x)sin(x)-cos^3(x)}{sin(x)}dx\]
+\[=>-\int \frac{(4sin^2-1) cos(x)}{sin(x)}dx\]
+Let,
+\\u = sin(x)\\
+\\ du/dx = cos(x)\\
+\\ dx = {1/cos(x)}\,dx\\
+\\So,
+\[=>\int \frac{4u^2-1}{u}\,du\]
+\[=>\int (4u-\frac{1}{u})\,du\]
+\[=>4\int(u)\,du - \int \frac{1}{u}\,du ====(i)\]
+\\Again,
+$\int(u\,du)\\$
+$ \frac{u^2}{2}=====(ii)\\$
+\\And,
+\\$\\ \frac{1}{u}\,du\\$
+$ ln(u)=====(iii)$\\
+\\From ii and iii
+\[=>2u^2-ln(u)\] 
+\[=>2sin^2x-ln(sin(x))\]
+\\We get,
+\[=>-\int \frac{3cos(x)sin^2(x)-cos^3(x)}{sin(x)}\]
+\[=>lnsin(x)-2sin^2(x)\]
+
+\newpage
+
+\section{Task-3}
+Given that,
+\[\int cos(sec\theta)sec\theta tan\theta d\theta\]
+\\Let,\\
+$u = sec\theta$\\ \\
+$\frac{du}{d\theta}= sec\theta tan\theta$\\  \\
+$d\theta = \frac{1}{sec\theta tan\theta}$ \\ \\ \\
+After Implementing,
+\[=>\int cos(\frac{sec\theta}{sec\theta tan\theta}) sec\theta tan\theta d\theta\]
+\[=>\int cos(sec\theta)d\theta\]
+\[=>sin(sec\theta)+c\]
+
+\end{document}
