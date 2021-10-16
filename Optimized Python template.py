@@ -3,7 +3,6 @@ import sys
 from io import BytesIO, IOBase
 
 ## change code from here
-
 def main(x):
     return 5
 
