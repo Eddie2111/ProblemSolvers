@@ -16,3 +16,18 @@
   
   //please follow this sequence or else the distribution will not be created
 }
+
+
+// to fix the space above react pages:
+
+header{
+  
+  margin: -1% 0 0px 0;
+  padding: 0px 0 0 0;
+  width: 100%;
+  font-size:15px;
+  padding:30px;
+  background: #000000;
+  height: 40px;
+  color:white;
+}
