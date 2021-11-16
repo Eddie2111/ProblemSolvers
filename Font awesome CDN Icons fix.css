@@ -31,3 +31,8 @@ header{
   height: 40px;
   color:white;
 }
+
+// if you face problems in SVG to JSX problems, use these
+    sketch:type TO sketchType
+    xmlns:xlink TO xmlnsXlink
+    xlink:href  TO xlinkHref
