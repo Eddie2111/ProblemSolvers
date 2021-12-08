@@ -13,30 +13,30 @@ BUFSIZE = 8192
 
 ## optimization for fast input output
 class FastIO(IOBase):
-    newlines = 0
+    newlines            = 0
 
     def __init__(self, file):
-        self._fd = file.fileno()
-        self.buffer = BytesIO()
-        self.writable = "x" in file.mode or "r" not in file.mode
-        self.write = self.buffer.write if self.writable else None
+        self._fd        = file.fileno()
+        self.buffer     = BytesIO()
+        self.writable   = "x" in file.mode or "r" not in file.mode
+        self.write      = self.buffer.write if self.writable else None
 
     def read(self):
         while True:
-            b = os.read(self._fd, max(os.fstat(self._fd).st_size, BUFSIZE))
+            b           = os.read(self._fd, max(os.fstat(self._fd).st_size, BUFSIZE))
             if not b:
                 break
-            ptr = self.buffer.tell()
+            ptr         = self.buffer.tell()
             self.buffer.seek(0, 2), self.buffer.write(b), self.buffer.seek(ptr)
-        self.newlines = 0
+        self.newlines   = 0
         return self.buffer.read()
 
 ##reads line and allows kernel systems to analyze it
     def readline(self):
         while self.newlines == 0:
-            b = os.read(self._fd, max(os.fstat(self._fd).st_size, BUFSIZE))
-            self.newlines = b.count(b"\n") + (not b)
-            ptr = self.buffer.tell()
+            b               = os.read(self._fd, max(os.fstat(self._fd).st_size, BUFSIZE))
+            self.newlines   = b.count(b"\n") + (not b)
+            ptr             = self.buffer.tell()
             self.buffer.seek(0, 2), self.buffer.write(b), self.buffer.seek(ptr)
         self.newlines -= 1
         return self.buffer.readline()
@@ -49,15 +49,15 @@ class FastIO(IOBase):
 ## wraps memory in the memory slots
 class IOWrapper(IOBase):
     def __init__(self, file):
-        self.buffer = FastIO(file)
-        self.flush = self.buffer.flush
-        self.writable = self.buffer.writable
-        self.write = lambda s: self.buffer.write(s.encode("ascii"))
-        self.read = lambda: self.buffer.read().decode("ascii")
-        self.readline = lambda: self.buffer.readline().decode("ascii")
+        self.buffer         = FastIO(file)
+        self.flush          = self.buffer.flush
+        self.writable       = self.buffer.writable
+        self.write          = lambda s: self.buffer.write(s.encode("ascii"))
+        self.read           = lambda: self.buffer.read().decode("ascii")
+        self.readline       = lambda: self.buffer.readline().decode("ascii")
 
 
-sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
+sys.stdin, sys.stdout       = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 input = lambda: sys.stdin.readline().rstrip("\r\n")
 
 if __name__ == "__main__":
