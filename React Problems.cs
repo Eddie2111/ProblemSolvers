@@ -5,3 +5,10 @@ To pass the barrier type
 set-executionpolicy remotesigned
 
 this will temporarily allow your powershell to control further
+
+
+/////////////////////////////////////////////////////////////
+material ui is nice. But has some problems if you install,
+npm install @emotion/react 
+npm install @emotion/styled
+to fix it
