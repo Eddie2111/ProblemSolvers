@@ -4,6 +4,7 @@ python -m django startproject <projectName> .
 
 to start django project
 
+
 python manage.py runserver <port number>
 
 
